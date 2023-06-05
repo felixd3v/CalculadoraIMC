@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">          Calculadora de IMC</string>
+    <string name="edad">Edad</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="hint_edad">18</string>
+    <string name="hint_altura">173</string>
+    <string name="hint_peso">74</string>
+    <string name="boton_calcular">Calcular</string>
+    <string name="mensaje">Índice de Masa Corporal</string>
+
+</resources>
