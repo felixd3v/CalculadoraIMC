@@ -13,12 +13,12 @@
 
 
 
-    <string-array name="altura">
+    <string-array name="spinnerAltura">
         <item>cm</item>
         <item>pulgadas</item>
     </string-array>
 
-    <string-array name="peso">
+    <string-array name="spinnerPeso">
         <item>kg</item>
         <item>libras</item>
     </string-array>

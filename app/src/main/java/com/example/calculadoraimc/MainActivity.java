@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btnMasculino, btnFemenino;
     private Button btnCalcularIMC;
     private TextView textViewResultado, textViewSituacion;
-    private Spinner altura, peso;
+    private Spinner spinnerAltura, spinnerPeso;
     private ImageView imgSituacion;
 
     private String selectedGender;
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         btnCalcularIMC = findViewById(R.id.btnCalcularIMC);
         textViewResultado = findViewById(R.id.textViewResultado);
         textViewSituacion = findViewById(R.id.textViewSituacion);
-        altura = findViewById(R.id.spinnerAltura);
-        peso = findViewById(R.id.spinnerPeso);
+        spinnerAltura = findViewById(R.id.spinnerAltura);
+        spinnerPeso = findViewById(R.id.spinnerPeso);
         imgSituacion = findViewById(R.id.imgpeso);
 
         // Agregar listeners a los botones de género
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item
         );
         alturaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        altura.setAdapter(alturaAdapter);
+        spinnerAltura.setAdapter(alturaAdapter);
 
         ArrayAdapter<CharSequence> pesoAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item
         );
         pesoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        peso.setAdapter(pesoAdapter);
+        spinnerPeso.setAdapter(pesoAdapter);
 
         // Agregar listener al Spinner de altura
-        altura.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerAltura.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedAltura = parent.getItemAtPosition(position).toString();
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Agregar listener al Spinner de peso
-        peso.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerPeso.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedPeso = parent.getItemAtPosition(position).toString();
