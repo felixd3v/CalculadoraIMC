@@ -134,136 +134,136 @@ public class MainActivity extends AppCompatActivity {
             if (edad < 16) {
                 if (imc < 19) {
                     situacion = "Delgadez severa";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.imagen_mujer_inicio;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.femenino6;
+                    imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 16 && edad <= 18) {
                 if (imc < 19) {
                     situacion = "Delgadez severa";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.masculino3;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.masculino4;
+                    imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 19 && edad <= 24) {
                 if (imc < 19) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.delgado1;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 25 && edad <= 29) {
                 if (imc < 20) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.delgado1;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.femenino6;
+                    imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 30 && edad <= 60) {
                 if (imc < 21) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.imagen_mujer_inicio;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 21 && imc < 26) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesaf;
                 }
             } else if (edad > 60) {
                 if (imc < 22) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadaf;
                 } else if (imc >= 22 && imc < 27) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.normalf;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesaf;
                 }
             }
         } else if (selectedGender.equals("masculino")) {
             if (edad < 16) {
                 if (imc < 20) {
                     situacion = "Delgadez severa";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 16 && edad <= 18) {
                 if (imc < 20) {
                     situacion = "Delgadez severa";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 19 && edad <= 24) {
                 if (imc < 20) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.obesamujer1;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 25 && edad <= 29) {
                 if (imc < 21) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 21 && imc < 26) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.imagen_mujer_inicio;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 30 && edad <= 60) {
                 if (imc < 22) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 22 && imc < 27) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.imagen_mujer_inicio;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.obesom;
                 }
             } else if (edad > 60) {
                 if (imc < 23) {
                     situacion = "Delgadez";
-                    imageResource = R.drawable.imagen_hombre_inicio;
+                    imageResource = R.drawable.delgadom;
                 } else if (imc >= 23 && imc < 28) {
                     situacion = "Peso normal";
-                    imageResource = R.drawable.obeso1;
+                    imageResource = R.drawable.normalm;
                 } else {
                     situacion = "Sobrepeso";
-                    imageResource = R.drawable.obeso3;
+                    imageResource = R.drawable.obesom;
                 }
             }
         }
