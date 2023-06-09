@@ -12,6 +12,7 @@
     <string name="boton_Masculino">Masculino</string>
 
 
+
     <string-array name="altura">
         <item>cm</item>
         <item>pulgadas</item>

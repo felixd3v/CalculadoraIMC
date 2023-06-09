@@ -1,6 +1,8 @@
 package com.example.calculadoraimc;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCalcularIMC;
     private TextView textViewResultado, textViewSituacion;
     private Spinner altura, peso;
+    private ImageView imgSituacion;
 
     private String selectedGender;
     private int edad;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         textViewSituacion = findViewById(R.id.textViewSituacion);
         altura = findViewById(R.id.spinnerAltura);
         peso = findViewById(R.id.spinnerPeso);
+        imgSituacion = findViewById(R.id.imgpeso);
 
         // Agregar listeners a los botones de género
         btnMasculino.setOnClickListener(new View.OnClickListener() {
@@ -124,112 +129,151 @@ public class MainActivity extends AppCompatActivity {
 
         // Determinar la situación según el IMC, el género y la edad
         String situacion = "";
+        int imageResource = 0; // Variable para almacenar el ID de la imagen
         if (selectedGender.equals("femenino")) {
             if (edad < 16) {
                 if (imc < 19) {
                     situacion = "Delgadez severa";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.imagen_mujer_inicio;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.femenino6;
                 }
             } else if (edad >= 16 && edad <= 18) {
                 if (imc < 19) {
                     situacion = "Delgadez severa";
+                    imageResource = R.drawable.obeso3;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.masculino3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.masculino4;
                 }
             } else if (edad >= 19 && edad <= 24) {
                 if (imc < 19) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.delgado1;
                 } else if (imc >= 19 && imc < 24) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             } else if (edad >= 25 && edad <= 29) {
                 if (imc < 20) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.delgado1;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.femenino6;
                 }
             } else if (edad >= 30 && edad <= 60) {
                 if (imc < 21) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.imagen_mujer_inicio;
                 } else if (imc >= 21 && imc < 26) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             } else if (edad > 60) {
                 if (imc < 22) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 22 && imc < 27) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             }
         } else if (selectedGender.equals("masculino")) {
             if (edad < 16) {
                 if (imc < 20) {
                     situacion = "Delgadez severa";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             } else if (edad >= 16 && edad <= 18) {
                 if (imc < 20) {
                     situacion = "Delgadez severa";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             } else if (edad >= 19 && edad <= 24) {
                 if (imc < 20) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.obesamujer1;
                 } else if (imc >= 20 && imc < 25) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso3;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso1;
                 }
             } else if (edad >= 25 && edad <= 29) {
                 if (imc < 21) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 } else if (imc >= 21 && imc < 26) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.imagen_mujer_inicio;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 }
             } else if (edad >= 30 && edad <= 60) {
                 if (imc < 22) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 } else if (imc >= 22 && imc < 27) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.imagen_mujer_inicio;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 }
             } else if (edad > 60) {
                 if (imc < 23) {
                     situacion = "Delgadez";
+                    imageResource = R.drawable.imagen_hombre_inicio;
                 } else if (imc >= 23 && imc < 28) {
                     situacion = "Peso normal";
+                    imageResource = R.drawable.obeso1;
                 } else {
                     situacion = "Sobrepeso";
+                    imageResource = R.drawable.obeso3;
                 }
             }
         }
 
-        // Mostrar el IMC y la situación en los TextView correspondientes
+        // Mostrar el resultado y la situación
         textViewResultado.setText(String.format("%.2f", imc));
-        textViewResultado.setVisibility(View.VISIBLE);
         textViewSituacion.setText(situacion);
-        textViewSituacion.setVisibility(View.VISIBLE);
+
+        // Mostrar la imagen correspondiente a la situación
+        Drawable drawable = getResources().getDrawable(imageResource);
+        imgSituacion.setImageDrawable(drawable);
     }
 }
