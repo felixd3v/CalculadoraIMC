@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="altura_options" />
-    <string-array name="peso_options" />
+
+    <string-array name="altura_options">
+        <item>cm</item>
+        <item>pulgadas</item>
+    </string-array>
+    <string-array name="peso_options">
+        <item>kg</item>
+        <item>libras</item>
+    </string-array>
 </resources>
