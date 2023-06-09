@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">          Calculadora de IMC</string>
+    <string name="app_name">Calculadora de IMC</string>
     <string name="edad">Edad</string>
     <string name="altura">Altura</string>
     <string name="peso">Peso</string>
@@ -8,5 +8,18 @@
     <string name="hint_peso">74</string>
     <string name="boton_calcular">Calcular</string>
     <string name="mensaje">Índice de Masa Corporal</string>
+    <string name="boton_femenino">Femenino</string>
+    <string name="boton_Masculino">Masculino</string>
+
+
+    <string-array name="altura">
+        <item>cm</item>
+        <item>pulgadas</item>
+    </string-array>
+
+    <string-array name="peso">
+        <item>kg</item>
+        <item>libras</item>
+    </string-array>
 
 </resources>
