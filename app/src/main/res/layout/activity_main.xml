@@ -227,7 +227,7 @@
             android:id="@+id/imgpeso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/imagen_mujer_inicio" />
+            app:srcCompat="@drawable/foto_de_intro" />
 
     </LinearLayout>
 
