@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText txtEdad, txtAltura, txtPeso;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String selectedGender;
     private int edad;
+    private FloatingActionButton btnReset,btnSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         spinnerAltura = findViewById(R.id.spinnerAltura);
         spinnerPeso = findViewById(R.id.spinnerPeso);
         imgSituacion = findViewById(R.id.imgpeso);
+        btnSalir = findViewById(R.id.btnSalir);
+        btnReset = findViewById(R.id.btnReset);
 
         // Agregar listeners a los botones de género
         btnMasculino.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +65,30 @@ public class MainActivity extends AppCompatActivity {
                 selectedGender = "femenino";
                 btnFemenino.setSelected(true);
                 btnMasculino.setSelected(false);
+
             }
         });
+
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtAltura.setText("");
+                txtEdad.setText("");
+                txtPeso.setText("");
+                textViewResultado.setText("");
+                textViewSituacion.setText("");
+            }
+
+
+        });
+        btnSalir.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                System.exit(0);
+            }
+        });
+
 
         // Agregar un listener al botón de calcular
         btnCalcularIMC.setOnClickListener(new View.OnClickListener() {
@@ -125,17 +152,18 @@ public class MainActivity extends AppCompatActivity {
         edad = Integer.parseInt(txtEdad.getText().toString());
 
         // Cálculo del IMC
-        double imc = peso / (altura * altura);
+        double imc = peso / ((altura/100) * (altura/100));
+
 
         // Determinar la situación según el IMC, el género y la edad
         String situacion = "";
         int imageResource = 0; // Variable para almacenar el ID de la imagen
         if (selectedGender.equals("femenino")) {
-            if (edad < 16) {
-                if (imc < 19) {
+            if (edad <=16) {
+                if (imc <= 18.9) {
                     situacion = "Delgadez severa";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 19 && imc < 24) {
+                } else if (imc >= 19 && imc <= 24.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -143,10 +171,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 16 && edad <= 18) {
-                if (imc < 19) {
+                if (imc <= 19.9) {
                     situacion = "Delgadez severa";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 19 && imc < 24) {
+                } else if (imc >= 19 && imc <=24.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -154,10 +182,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 19 && edad <= 24) {
-                if (imc < 19) {
+                if (imc <=18) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 19 && imc < 24) {
+                } else if (imc >= 19 && imc <= 24.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -165,10 +193,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesaf;
                 }
             } else if (edad >= 25 && edad <= 29) {
-                if (imc < 20) {
+                if (imc <=20.9) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 20 && imc < 25) {
+                } else if (imc >= 20 && imc <= 25.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -179,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                 if (imc < 21) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 21 && imc < 26) {
+                } else if (imc >= 21 && imc <=26.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -187,10 +215,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesaf;
                 }
             } else if (edad > 60) {
-                if (imc < 22) {
+                if (imc <=22) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadaf;
-                } else if (imc >= 22 && imc < 27) {
+                } else if (imc >= 22 && imc <=27.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalf;
                 } else {
@@ -199,11 +227,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         } else if (selectedGender.equals("masculino")) {
-            if (edad < 16) {
-                if (imc < 20) {
+            if (edad <=16) {
+                if (imc <= 20) {
                     situacion = "Delgadez severa";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 20 && imc < 25) {
+                } else if (imc >= 20 && imc <=25.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
@@ -211,10 +239,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 16 && edad <= 18) {
-                if (imc < 20) {
+                if (imc <=20) {
                     situacion = "Delgadez severa";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 20 && imc < 25) {
+                } else if (imc >= 20 && imc <=25) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
@@ -222,10 +250,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 19 && edad <= 24) {
-                if (imc < 20) {
+                if (imc <=20) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 20 && imc < 25) {
+                } else if (imc >= 20 && imc <=25.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
@@ -233,10 +261,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 25 && edad <= 29) {
-                if (imc < 21) {
+                if (imc <=21) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 21 && imc < 26) {
+                } else if (imc >= 21 && imc <=26.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
@@ -244,10 +272,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesom;
                 }
             } else if (edad >= 30 && edad <= 60) {
-                if (imc < 22) {
+                if (imc <=22) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 22 && imc < 27) {
+                } else if (imc >= 22 && imc <=27.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
@@ -255,10 +283,10 @@ public class MainActivity extends AppCompatActivity {
                     imageResource = R.drawable.obesom;
                 }
             } else if (edad > 60) {
-                if (imc < 23) {
+                if (imc <=23) {
                     situacion = "Delgadez";
                     imageResource = R.drawable.delgadom;
-                } else if (imc >= 23 && imc < 28) {
+                } else if (imc >= 23 && imc <=28.9) {
                     situacion = "Peso normal";
                     imageResource = R.drawable.normalm;
                 } else {
