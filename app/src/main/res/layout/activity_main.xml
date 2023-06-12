@@ -92,19 +92,19 @@
 
             <ImageButton
                 android:id="@+id/btnMasculino"
-                android:layout_width="45dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
-                app:srcCompat="@drawable/masculino3" />
+                app:srcCompat="@drawable/hombre_color_azul" />
 
             <ImageButton
                 android:id="@+id/btnFemenino"
                 android:layout_width="wrap_content"
-                android:layout_height="90dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
-                app:srcCompat="@drawable/femenino6" />
+                app:srcCompat="@drawable/mujer_color_naranja" />
 
         </LinearLayout>
 
